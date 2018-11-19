@@ -46,7 +46,8 @@ Student.prototype.getComplited = function() {
 Student.prototype.getFailed = function() {
     failedList = [];
     for (var i = 0; i < this.issues.length; i++) {
-        if (!this.issues[i].isComplited && Date.now() > Date.parse(this.issues[i].deadline)) {
+        a = Date.parse(this.issues[i].deadline);
+        if (!this.issues[i].isComplited && Date.now() > a) {
             failedList.push(this.issues[i]);
         };
     }; 
